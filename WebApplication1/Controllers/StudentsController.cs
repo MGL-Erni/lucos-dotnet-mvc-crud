@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Migrations;
 using WebApplication1.Models;
 using WebApplication1.Models.Entities;
 
@@ -29,7 +30,8 @@ namespace WebApplication1.Controllers
                 Name = viewModel.Name,
                 Email = viewModel.Email,
                 Phone = viewModel.Phone,
-                Subscribed = viewModel.Subscribed
+                Subscribed = viewModel.Subscribed,
+                Picture = viewModel.Picture
             };
             await dbContext.Students.AddAsync(student);
             await dbContext.SaveChangesAsync();
@@ -60,6 +62,7 @@ namespace WebApplication1.Controllers
                 student.Email = viewModel.Email;
                 student.Phone = viewModel.Phone;
                 student.Subscribed = viewModel.Subscribed;
+                student.Picture = viewModel.Picture;
                 await dbContext.SaveChangesAsync();
             }
             return RedirectToAction("List", "Students");
