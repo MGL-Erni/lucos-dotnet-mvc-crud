@@ -1,8 +1,126 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<!--
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+-->
+
+<style>
+    img {
+        height: 150px;
+        width: 100%;
+    }
+
+    div [class^="col-"] {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .card {
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .card-text {
+        margin: 5px;
+    }
+
+    .card-title {
+        font-size: 20px;
+        transition: 1s;
+        cursor: pointer;
+        text-align: center;
+    }
+
+        .card-title i {
+            font-size: 15px;
+            transition: 1s;
+            cursor: pointer;
+            color: #ffa710
+        }
+
+            .card-title i:hover {
+                transform: scale(1.25) rotate(100deg);
+                color: #18d4ca;
+            }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    }
+
+    .card-text {
+        height: 80px;
+    }
+
+    .card::before, .card::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale3d(0, 0, 1);
+        transition: transform .3s ease-out 0s;
+        background: rgba(255, 255, 255, 0.1);
+        content: '';
+        pointer-events: none;
+    }
+
+    .card::before {
+        transform-origin: left top;
+    }
+
+    .card::after {
+        transform-origin: right bottom;
+    }
+
+    .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+        transform: scale3d(1, 1, 1);
+    }
+</style>
+
+<div class="container mt-2">
+    <!--   <div class="card card-block mb-2">
+        <h4 class="card-title">Card 1</h4>
+        <p class="card-text">Welcom to bootstrap card styles</p>
+        <a href="#" class="btn btn-primary">Submit</a>
+      </div>   -->
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="card card-block">
+                <!--<h4 class="card-title text-right"><i class="material-icons">settings</i></h4>-->
+                <img src="https://cdn.ourcodeworld.com/public-media/articles/articleocw-5d8255083bfd2.webp" alt="Photo of sunset">
+                <b><h5 class="card-title mt-3 mb-3">Introduction to Secure Coding</h5></b>
+                <p class="card-text">Learn the essentials of writing secure software by understanding and mitigating common vulnerabilities.</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="card card-block">
+                <!--<h4 class="card-title text-right"><i class="material-icons">settings</i></h4>-->
+                <img src="https://www.secura.com/uploads/media/_1200x600_crop_center-center_none/OWASP-Top-10-logo.png" alt="Photo of sunset">
+                <h5 class="card-title  mt-3 mb-3">The OWASP Top 10</h5>
+                <p class="card-text">Learn the most critical and timely security vulnerabilities in modern web applications.</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="card card-block">
+                <!--<h4 class="card-title text-right"><i class="material-icons">settings</i></h4>-->
+                <img src="https://media.licdn.com/dms/image/D5612AQFDF2xxBnMpww/article-cover_image-shrink_600_2000/0/1685566904228?e=2147483647&v=beta&t=lq15NSoNj4UFt73Ns1YQ5YnVsoGzPWj1DkHd6-6Np8A" alt="Photo of sunset">
+                <h5 class="card-title  mt-3 mb-3">Secure Code Review</h5>
+                <p class="card-text">Master the techniques to identify and fix vulnerabilities in web application source code.</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="card card-block">
+                <!--<h4 class="card-title text-right"><i class="material-icons">settings</i></h4>-->
+                <img src="https://www.tarlogic.com/wp-content/uploads/2023/07/API-OWASP-1.webp" alt="Photo of sunset">
+                <h5 class="card-title  mt-3 mb-3">The OWASP API Top 10</h5>
+                <p class="card-text">Learn to protect your APIs from the most common threats.</p>
+            </div>
+        </div>
+    </div>
+
 </div>
